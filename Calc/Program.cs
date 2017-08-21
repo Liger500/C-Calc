@@ -11,21 +11,17 @@ namespace Calc
         static void Main(string[] args)
         {
 
-            String choice;
             int x = 0;
             int y = 0;
-            int z = 0;
-            String A = "A";
-            String B = "B";
-            String C = "C";
-            String D = "D";
+            int result = 0;
+            string symbol;
 
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine("A) Add");
-            Console.WriteLine("B) Subtract");
-            Console.WriteLine("C) Multiply");
-            Console.WriteLine("D) Divide");
-            choice = Console.ReadLine();
+            Console.WriteLine("+) Add");
+            Console.WriteLine("-) Subtract");
+            Console.WriteLine("*) Multiply");
+            Console.WriteLine("/) Divide");
+            symbol = Console.ReadLine();
 
             Console.WriteLine("Please enter the first number:");
             x = Convert.ToInt32(Console.ReadLine());
@@ -34,26 +30,46 @@ namespace Calc
             y = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(y);
 
-            if (choice == A)
+            if (symbol == "+")
             {
-                z = x + y;
+                result = Add(x, y);
             }
-            if (choice == B)
+            if (symbol == "-")
             {
-                z = x - y;
+                result = Sub(x, y);
             }
-            if (choice == C)
+            if (symbol == "*")
             {
-                z = x * y;
+                result = Mult(x, y);
             }
-            if (choice == D)
+            if (symbol == "/")
             {
-                z = x / y;
+                result = Div(x, y);
             }
 
-
-            Console.WriteLine(z);
+            Console.WriteLine(result);
             Console.ReadLine();
+        }  //End main
+
+        static int Add(int x, int y)
+        {
+            int result = x + y;
+            return result;
+        }  //End Add
+        static int Sub(int x, int y)
+        {
+            int result = x - y;
+            return result;
+        }  //End Sub
+        static int Mult(int x, int y)
+        {
+            int result = x * y;
+            return result;
         }
-    }
-}
+        static int Div(int x, int y)
+        {
+            int result = x / y;
+            return result;
+        }
+    }  //End class
+}  //End namespace
